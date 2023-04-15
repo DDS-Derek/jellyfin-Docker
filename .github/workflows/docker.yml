@@ -45,6 +45,8 @@ jobs:
             linux/arm64/v8
             linux/arm/v7
           push: true
+          build-args: |
+            JELLYFIN_VERSION=${{ steps.meta.outputs.version }}
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/jellyfin:${{ steps.meta.outputs.version }}
             ${{ secrets.DOCKER_USERNAME }}/jellyfin:latest
